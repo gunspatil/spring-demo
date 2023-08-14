@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: springdemo 
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-demo-deploy 
+  namespace: springdemo
+  labels:
+    app: spring-demo 
+spec:
+ replicas: 1
+ selector:
+    matchLabels:
+      app: spring-demo 
+ template:
+    metadata:
+      labels:
+        app: spring-demo 
+    spec:
+      containers:
+        - name: spring-demo 
+          image: 103078382956.dkr.ecr.eu-central-1.amazonaws.com/app-container-repo:Latest
+          ports:
+           - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-demo-service
+  namespace: springdemo
+  labels:
+    app: spring-demo 
+spec:
+  type: LoadBalancer 
+  selector:
+    app: spring-demo 
+  ports:
+    - port: 8080
+      targetPort: 8080 
