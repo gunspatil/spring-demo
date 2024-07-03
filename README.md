@@ -17,7 +17,7 @@ For further reference, please consider the following sections:
 * [Spring Web](https://docs.spring.io/spring-boot/docs/2.7.2/reference/htmlsingle/#web)
 * [JDBC API](https://docs.spring.io/spring-boot/docs/2.7.2/reference/htmlsingle/#data.sql)
 
-### Guides
+### Guides##
 The following guides illustrate how to use some features concretely:
 
 * [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
